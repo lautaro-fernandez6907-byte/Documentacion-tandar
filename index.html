@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentación TANDAR-CNEA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-box">T</div>
+      <div><strong>TANDAR-CNEA</strong><span>Documentación del proyecto</span></div>
+    </div>
+
+    <nav>
+      <a href="#intro">2 · Introducción</a>
+      <a href="#proposito">2.1 · Propósito</a>
+      <a href="#alcance">2.2 · Alcance</a>
+      <a href="#personal">2.3 · Personal involucrado</a>
+      <a href="#definiciones">2.4 · Definiciones y acrónimos</a>
+      <a href="#referencias">2.5 · Referencias</a>
+      <a href="#resumen">2.6 · Resumen ejecutivo</a>
+
+      <div class="nav-group">DESCRIPCIÓN Y REQUISITOS</div>
+      <a href="#descripcion">3 · Descripción general</a>
+      <a href="#perspectiva">3.1 · Perspectiva del producto</a>
+      <a href="#funcionalidad">3.2 · Funcionalidad</a>
+      <a href="#usuarios">3.3 · Características de los usuarios</a>
+      <a href="#restricciones">3.4 · Restricciones</a>
+      <a href="#dependencias">3.5 · Suposiciones y dependencias</a>
+      <a href="#evolucion">3.6 · Evolución previsible</a>
+      <a href="#requisitos">4 · Requisitos específicos</a>
+      <a href="#rf">4.1 · Requerimientos funcionales</a>
+      <a href="#rnf">4.2 · Requerimientos no funcionales</a>
+      <a href="#ui">4.3 · Interfaces de usuario</a>
+      <a href="#hardware">4.4 · Interfaces de hardware</a>
+      <a href="#software">4.5 · Interfaces de software</a>
+      <a href="#bd">4.6 · Modelo de base de datos</a>
+      <a href="#comunicacion">4.7 · Interfaces de comunicación</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <span>Proyecto</span>
+      <b>TANDAR · CNEA</b>
+      <small>Versión navegable de la documentación</small>
+    </div>
+  </aside>
+
+  <main>
+    <header class="top">
+      <div>
+        <span class="eyebrow">CARPETA DEL PROYECTO · DOCUMENTACIÓN</span>
+        <h1>Gestión de turnos de irradiación</h1>
+        <p class="subtitle">Sistema TANDAR-CNEA</p>
+      </div>
+      <button id="theme" class="theme">☼ Cambiar tema</button>
+    </header>
+
+    <div class="hero">
+      <p>Documentación técnica y funcional del sistema web desarrollado para digitalizar el circuito de solicitud, evaluación y aprobación de turnos de irradiación en el acelerador TANDAR del Centro Atómico Constituyentes.</p>
+      <div class="meta">
+        <div><span>INSTITUCIÓN</span><b>Comisión Nacional de Energía Atómica</b></div>
+        <div><span>TECNOLOGÍAS</span><b>PHP · MariaDB · nginx · HTML · CSS · JS</b></div>
+        <div><span>ÁMBITO</span><b>Red interna de la CNEA</b></div>
+        <div><span>ROLES</span><b>Investigador · Responsable · RP · Jefatura</b></div>
+      </div>
+    </div>
+
+    <div class="notice"><b>Sobre este documento.</b> Esta página presenta de forma navegable el contenido de la documentación del proyecto TANDAR-CNEA, manteniendo su estructura y terminología.</div>
+
+    <section id="intro"><div class="section-title"><span>2</span><h2>Introducción</h2></div>
+      <article id="proposito"><h3>2.1 · Propósito</h3>
+        <p>El propósito de TANDAR-CNEA es resolver la gestión manual y desorganizada de las solicitudes de turno de irradiación en el acelerador TANDAR del Centro Atómico Constituyentes (CNEA).</p>
+        <p>Actualmente estas solicitudes se coordinan por canales informales (correo, WhatsApp, papel), lo que genera demoras, pérdida de trazabilidad y falta de un registro formal de aprobaciones. El sistema busca centralizar en una plataforma web el circuito completo: solicitud del investigador, evaluación del responsable de línea experimental, evaluación del administrador (Jefe de Operaciones) y, en caso de aprobación, la generación del documento formal de irradiación.</p>
+      </article>
+
+      <article id="alcance"><h3>2.2 · Alcance</h3>
+        <div class="columns">
+          <div><h4>Incluye</h4><ul>
+            <li>Registro y autenticación de usuarios por rol.</li>
+            <li>Solicitud de turnos con fecha, horario, línea experimental y motivo.</li>
+            <li>Circuito de aprobación en cascada.</li>
+            <li>Calendario de disponibilidad por línea experimental.</li>
+            <li>Sistema de notificaciones.</li>
+            <li>Generación de documento o planilla Excel/PDF.</li>
+          </ul></div>
+          <div><h4>Fuera de alcance</h4><ul>
+            <li>Integración con sistemas documentales externos de CNEA.</li>
+            <li>Autenticación externa mediante Google.</li>
+            <li>Facturación, costos o presupuesto.</li>
+            <li>Aplicación móvil nativa.</li>
+          </ul></div>
+        </div>
+      </article>
+
+      <article id="personal"><h3>2.3 · Personal involucrado</h3>
+        <div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Rol</th></tr></thead><tbody>
+          <tr><td>[Pepe — completar apellido]</td><td>Desarrollador (PHP/MySQL, full stack)</td></tr>
+          <tr><td>[Completar]</td><td>[Completar rol]</td></tr>
+          <tr><td>[Completar]</td><td>[Otros integrantes]</td></tr>
+          <tr><td>[Papá de Pepe — completar nombre]</td><td>Cliente / interesado</td></tr>
+        </tbody></table></div>
+      </article>
+
+      <article id="definiciones"><h3>2.4 · Definición, acrónimos y abreviaturas</h3>
+        <div class="cards">
+          <div class="mini"><b>CNEA</b><span>Comisión Nacional de Energía Atómica.</span></div>
+          <div class="mini"><b>TANDAR</b><span>Acelerador de partículas del Centro Atómico Constituyentes.</span></div>
+          <div class="mini"><b>CRUD</b><span>Create, Read, Update, Delete.</span></div>
+          <div class="mini"><b>CSRF</b><span>Cross-Site Request Forgery.</span></div>
+          <div class="mini"><b>PHPMailer</b><span>Librería PHP para envío de notificaciones por correo.</span></div>
+          <div class="mini"><b>Línea experimental</b><span>Haz/experimento disponible para solicitar un turno.</span></div>
+        </div>
+      </article>
+
+      <article id="referencias"><h3>2.5 · Referencias</h3>
+        <ul><li>[Apellido, Inicial]. (Año). <i>Buenas prácticas para el desarrollo de proyectos de software</i>.</li>
+        <li>FullCalendar. (s.f.). FullCalendar Documentation.</li><li>PHPMailer. (s.f.). PHPMailer Documentation.</li></ul>
+      </article>
+
+      <article id="resumen"><h3>2.6 · Resumen ejecutivo</h3>
+        <p>TANDAR-CNEA es un sistema web desarrollado en PHP y MariaDB para gestionar el circuito de solicitud, evaluación y aprobación de turnos de irradiación. Reemplaza un proceso manual por un flujo digital con roles diferenciados, notificaciones automáticas, calendario de disponibilidad y generación de documentación formal.</p>
+      </article>
+    </section>
+
+    <section id="descripcion"><div class="section-title"><span>3</span><h2>Descripción general</h2></div>
+      <article id="perspectiva"><h3>3.1 · Perspectiva del producto</h3><p>TANDAR-CNEA es un sistema nuevo, construido específicamente para digitalizar un proceso gestionado manualmente dentro de la CNEA. Funciona como una aplicación web independiente alojada en un nodo interno.</p></article>
+      <article id="funcionalidad"><h3>3.2 · Funcionalidad del producto</h3><div class="cards"><div class="mini">Autenticación según rol.</div><div class="mini">Calendario de disponibilidad.</div><div class="mini">Creación y evaluación de solicitudes.</div><div class="mini">Notificaciones.</div><div class="mini">Generación del documento final.</div><div class="mini">Historial de solicitudes.</div></div></article>
+      <article id="usuarios"><h3>3.3 · Características de los usuarios</h3><div class="table-wrap"><table><thead><tr><th>Rol</th><th>Perfil</th><th>Frecuencia</th></tr></thead><tbody>
+        <tr><td>Investigador</td><td>Personal científico/técnico sin conocimientos informáticos avanzados.</td><td>Ocasional</td></tr>
+        <tr><td>Responsable de línea</td><td>Referente técnico de una línea experimental.</td><td>Frecuente</td></tr>
+        <tr><td>Administrador / Jefe de Operaciones</td><td>Personal de gestión y coordinación.</td><td>Frecuente</td></tr>
+        <tr><td>Oficial de Radioprotección</td><td>Personal especializado en seguridad radiológica.</td><td>Ocasional</td></tr>
+      </tbody></table></div></article>
+      <article id="restricciones"><h3>3.4 · Restricciones</h3><div class="cards"><div class="mini"><b>Seguridad</b><span>Sesiones PHP, control por rol y protección CSRF.</span></div><div class="mini"><b>Red</b><span>Uso restringido a la red interna de CNEA.</span></div><div class="mini"><b>Interfaz</b><span>100% en español.</span></div><div class="mini"><b>Protocolos</b><span>HTTP/HTTPS y SMTP.</span></div></div></article>
+      <article id="dependencias"><h3>3.5 · Suposiciones y dependencias</h3><ul><li>Disponibilidad del nodo interno nginx + MariaDB.</li><li>Uso efectivo de la plataforma por los distintos roles.</li><li>Disponibilidad de una cuenta de correo para notificaciones, sujeta a las restricciones de red.</li></ul></article>
+      <article id="evolucion"><h3>3.6 · Evolución previsible</h3><ul><li>Correo interno de CNEA o SMS.</li><li>Reportes estadísticos de uso.</li><li>Migración a servidor propio con HTTPS si se aprueba formalmente.</li></ul></article>
+    </section>
+
+    <section id="requisitos"><div class="section-title"><span>4</span><h2>Requisitos específicos</h2></div>
+      <article id="rf"><h3>4.1 · Requerimientos funcionales</h3><div class="req-grid">
+        <div class="req"><b>RF01</b><span>Autenticación, registro, recuperación de contraseña y bloqueo por intentos fallidos.</span></div>
+        <div class="req"><b>RF02</b><span>Alta de solicitud con línea, fechas, expediente, experimento, blanco, observaciones, investigadores y haces.</span></div>
+        <div class="req"><b>RF03</b><span>Verificación de disponibilidad con bloqueo de fila para evitar conflictos.</span></div>
+        <div class="req"><b>RF04</b><span>Circuito: responsable → radioprotección → jefe de operaciones.</span></div>
+        <div class="req"><b>RF05</b><span>Aprobar, rechazar o proponer fecha, registrando modificaciones.</span></div>
+        <div class="req"><b>RF06</b><span>Confirmación, rechazo o contrapropuesta del investigador.</span></div>
+        <div class="req"><b>RF07</b><span>Radioprotección completa la Página 2 o rechaza con motivo.</span></div>
+        <div class="req"><b>RF08</b><span>Aprobación final, número correlativo y reserva del calendario.</span></div>
+        <div class="req"><b>RF09</b><span>Generación del documento formal HTML/PDF y Excel para Jefatura.</span></div>
+        <div class="req"><b>RF10</b><span>Notificaciones internas y envío asincrónico por email.</span></div>
+        <div class="req"><b>RF11</b><span>Trazabilidad inmutable de cambios de estado.</span></div>
+        <div class="req"><b>RF12</b><span>Gestión de usuarios y responsables por línea.</span></div>
+        <div class="req"><b>RF13</b><span>Historial y ocultamiento por usuario sin borrar registros.</span></div>
+        <div class="req"><b>RF14</b><span>Calendario visual de disponibilidad.</span></div>
+        <div class="req"><b>RF15</b><span>Aviso de último momento mediante Excel y notificación.</span></div>
+      </div></article>
+
+      <article id="rnf"><h3>4.2 · Requerimientos no funcionales</h3><div class="table-wrap"><table><thead><tr><th>ID</th><th>Requisito</th><th>Categoría</th></tr></thead><tbody>
+        <tr><td>RNF01</td><td>Contraseñas con hash bcrypt, costo 12.</td><td>Seguridad</td></tr>
+        <tr><td>RNF02</td><td>Token CSRF en formularios que modifican datos.</td><td>Seguridad</td></tr>
+        <tr><td>RNF03</td><td>Máximo 5 intentos fallidos en 15 minutos.</td><td>Seguridad</td></tr>
+        <tr><td>RNF04</td><td>Transacciones PDO con rollback ante error.</td><td>Fiabilidad</td></tr>
+        <tr><td>RNF05</td><td>FOR UPDATE para prevenir condiciones de carrera.</td><td>Fiabilidad</td></tr>
+        <tr><td>RNF06</td><td>Integridad referencial mediante InnoDB.</td><td>Fiabilidad</td></tr>
+        <tr><td>RNF07</td><td>Interfaz 100% en español.</td><td>Usabilidad</td></tr>
+        <tr><td>RNF08</td><td>Modo claro/oscuro persistente.</td><td>Usabilidad</td></tr>
+      </tbody></table></div></article>
+
+      <article id="ui"><h3>4.3 · Interfaces de usuario</h3><p>Sistema 100% web, responsive, con identidad visual común y selector de tema claro/oscuro. Cada rol posee un panel específico y todos comparten calendario y notificaciones.</p></article>
+      <article id="hardware"><h3>4.4 · Interfaces de hardware</h3><p>No aplica. El sistema es puramente web. El único hardware involucrado es el navegador del usuario y el nodo provisto por la CNEA.</p></article>
+      <article id="software"><h3>4.5 · Interfaces de software</h3><p>Backend con PHP 8 sin framework, PDO y prepared statements. Composer incorpora PHPMailer y PhpSpreadsheet. Frontend construido con HTML, CSS y JavaScript vanilla, sin framework ni build step.</p></article>
+      <article id="bd"><h3>4.6 · Modelo de base de datos</h3><p>MariaDB 11.4, motor InnoDB y utf8mb4_unicode_ci. El esquema documentado contiene 18 tablas base y una vista.</p>
+        <div class="db-list"><span>roles</span><span>usuarios</span><span>lineas_experimentales</span><span>responsables_linea</span><span>estados_solicitud</span><span>solicitudes</span><span>solicitud_investigadores</span><span>solicitud_iones</span><span>calendario</span><span>evaluaciones_responsable</span><span>disposiciones_radioproteccion</span><span>evaluaciones_radioproteccion</span><span>evaluaciones_jefe_operaciones</span><span>propuestas_modificacion</span><span>respuestas_usuario</span><span>historial_estados</span><span>avisos_ultimo_momento</span><span>notificaciones</span></div>
+      </article>
+      <article id="comunicacion"><h3>4.7 · Interfaces de comunicación</h3><div class="table-wrap"><table><thead><tr><th>Origen</th><th>Protocolo / tecnología</th><th>Detalle</th></tr></thead><tbody>
+        <tr><td>Cliente → Servidor</td><td>HTTP/HTTPS</td><td>nginx + PHP-FPM en nodo interno CNEA.</td></tr>
+        <tr><td>Backend → Base de datos</td><td>MariaDB / PDO</td><td>tandar_cnea, InnoDB, utf8mb4.</td></tr>
+        <tr><td>Backend → Email</td><td>SMTP</td><td>Gmail, puerto 587, mediante PHPMailer.</td></tr>
+        <tr><td>Backend → Google</td><td>HTTPS / OAuth 2.0</td><td>Login institucional, actualmente limitado por la red.</td></tr>
+      </tbody></table></div>
+    </article>
+    </section>
+
+    <footer>Documentación navegable · Sistema TANDAR-CNEA</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
